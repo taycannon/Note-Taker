@@ -6,7 +6,7 @@ const apiRouter = require('./routes/APIRoutes');
 const htmlRouter = require('./routes/htmlRoute')
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001
 
 //Middleware 
 app.use(express.json());
@@ -17,6 +17,6 @@ app.use(express.static('public'));
 app.use('/api', apiRouter);
 app.use('/', htmlRouter);
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Server is listening on port http://localhost:${PORT}`);
 });
