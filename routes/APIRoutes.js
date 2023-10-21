@@ -1,7 +1,7 @@
 //Api Routes
 
-const router = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helper/fsUtils');
+// const router = require('express').Router();
+
 const noteID = require('../helper/uuid');
 
 // GET Route
@@ -23,8 +23,10 @@ router.post('/notes', (req, res) => {
     };
 
     readAndAppend(newComment, './db/db.json');
-    res.json(`Note added successfully`);
+    res.json(`Note added success`);
   } else {
-    res.error('Error in adding new note');
+    res.error('Error added new note');
   }
 });
+
+module.exports = router;
