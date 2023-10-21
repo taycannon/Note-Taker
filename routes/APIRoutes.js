@@ -24,3 +24,5 @@ router.get('/notes', (req, res) => {
       res.error('Error added new note');
     }
   });
+
+  module.exports = router;
