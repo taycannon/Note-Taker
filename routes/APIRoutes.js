@@ -1,7 +1,8 @@
 //Api Routes
 
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const { readFromFile, readAndAppend } = require('../uuid/fsUtils');
+const noteID = require('../uuid/uuid');
 
 // GET Route
 router.get('/notes', (req, res) => {
