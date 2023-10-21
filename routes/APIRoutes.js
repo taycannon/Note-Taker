@@ -1,8 +1,7 @@
 //Api Routes
 
-// const router = require('express').Router();
-
-const noteID = require('../helper/uuid');
+const express = require('express');
+const router = express.Router();
 
 // GET Route
 router.get('/notes', (req, res) => {
