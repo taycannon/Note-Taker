@@ -1,7 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
-[object Object]
+[{"title":"Test","text":"Testing 1 with new code","id":"0fe2443a-7db9-4b72-8901-9eaa381fd319"},{"title":"Delete does work!","text":"Yay","id":"29391589-c2ed-48b1-a803-f04fa3c15b6b"}]

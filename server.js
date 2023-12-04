@@ -1,22 +1,18 @@
 //Server file
-
-//Importing express
 const express = require('express');
-const apiRouter = require('./routes/APIRoutes');
-const htmlRouter = require('./routes/htmlRoute')
-
+const html_routes = require('./routes/htmlRoute')
+const api_routes = require('./routes/APIRoutes')
+const PORT = process.env.PORT || 3001;
+// dynamically set the port
 const app = express();
-const port = process.env.PORT || 3001
 
-//Middleware 
+// Express middleware will always run the operation in the order from top to bottom "order matters"
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static("public"));
+app.use(html_routes)
+app.use(api_routes)
 
-//Setting up my routes 
-app.use('/api', apiRouter);
-app.use('/', htmlRouter);
-
-app.listen(port, () => {
-  console.log(`Server is listening on port http://localhost:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
